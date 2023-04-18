@@ -1,1 +1,1 @@
-#Document Scanner with OCR using Python
+Document Scanner with OCR using Python
