@@ -1,16 +1,18 @@
 import cv2
 import numpy as np
 
-def mask_generator(file_path):
+def mask_generator(file_path:str, inverse:bool = False):
     # Read in the original image
     image = cv2.imread(file_path)
 
     # Get the dimensions of the image
     height, width, channels = image.shape
 
-    # Create a white mask of the same size
+    # Create a mask of the same size
     mask = np.zeros((height, width, channels), dtype=np.uint8)
-    mask.fill(255)
+    
+    if inverse:
+        mask.fill(255)
 
     return mask
 
