@@ -10,6 +10,7 @@ def mask_generator(file_path:str, inverse:bool = False):
 
     # Create a mask of the same size
     mask = np.zeros((height, width, channels), dtype=np.uint8)
+    mask = cv2.cvtColor(mask, cv2.COLOR_BGR2RGB)
     
     if inverse:
         mask.fill(255)
